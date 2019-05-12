@@ -1,0 +1,27 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+@main  : #674488;
+@accent: #ac8fc7;
+
+body {
+   font-family: 'Segoe UI';
+}
+
+.wrapper {
+   display        : flex;
+   justify-content: center;
+   align-items    : center;
+   .min-size(auto, 100vh);
+   margin: 0 auto;
+}
+
+.wrapper>.col {
+   margin: 0 auto;
+}
+
+@import "modules/card";
+@import "modules/search-form";
+@import "modules/user-profile";

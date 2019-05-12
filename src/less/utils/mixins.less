@@ -1,0 +1,17 @@
+.min-size (@min-w: auto, @min-h: auto) {
+   min-width : @min-w;
+   min-height: @min-h;
+}
+
+//animation mixin
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
+}
