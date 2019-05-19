@@ -47,14 +47,14 @@ class SearchForm extends React.Component {
          <div className="search-wrapper">
 
             {this.state.isLoad ? <div className="overlay">
-               <div class="preloader-wrapper small active">
-                  <div class="spinner-layer spinner-red-only">
-                     <div class="circle-clipper left">
-                        <div class="circle"></div>
-                     </div><div class="gap-patch">
-                        <div class="circle"></div>
-                     </div><div class="circle-clipper right">
-                        <div class="circle"></div>
+               <div className="preloader-wrapper small active">
+                  <div className="spinner-layer spinner-red-only">
+                     <div className="circle-clipper left">
+                        <div className="circle"></div>
+                     </div><div className="gap-patch">
+                        <div className="circle"></div>
+                     </div><div className="circle-clipper right">
+                        <div className="circle"></div>
                      </div>
                   </div>
                </div>
@@ -62,15 +62,15 @@ class SearchForm extends React.Component {
 
             <div className="card-content">
                <span className="card-title">Find profile</span>
-               <div class="form-wrapper">
+               <div className="form-wrapper">
                   <form id="search-user" onSubmit={this.findUser}>
-                     <div class="search-input">
-                        <div class="input-field col s12">
-                           <i class="prefix material-icons prefix fab fa-github"></i>
+                     <div className="search-input">
+                        <div className="input-field col s12">
+                           <i className="prefix material-icons prefix fab fa-github"></i>
                            <input placeholder="Enter username" id="username" type="text" />
-                           {this.state.error ? <span class="helper-text error-message">{this.state.error}</span> : ""}
+                           {this.state.error ? <span className="helper-text error-message">{this.state.error}</span> : ""}
                         </div>
-                        <a class="waves-effect waves-light btn-small" onClick={this.findUser}>Search</a>
+                        <a className="waves-effect waves-light btn-small" onClick={this.findUser}>Search</a>
                      </div>
                   </form>
                </div>

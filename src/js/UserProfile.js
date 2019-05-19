@@ -172,11 +172,11 @@ class UserProfile extends React.Component {
             <div className="card-header grey lighten-4">
                <div className="controls">
                   <div className="close-button">
-                     <a href="#" title="Return to search" onClick={this.props.close}><i class="fas fa-arrow-left fa-2x"></i></a>
+                     <a href="#" title="Return to search" onClick={this.props.close}><i className="fas fa-arrow-left fa-2x"></i></a>
                   </div>
 
                   <div className="github-button">
-                     <a target="_blank" href={this.userData.html_url} title="Open on github"><i class="fab fa-github fa-2x"></i></a>
+                     <a target="_blank" href={this.userData.html_url} title="Open on github"><i className="fab fa-github fa-2x"></i></a>
                   </div>
                </div>
             </div>
@@ -194,9 +194,9 @@ class UserProfile extends React.Component {
                      <h1>{this.userData.name}</h1>
                      <h2>@{this.userData.login} (id {this.userData.id})</h2>
                      <h3>{this.userData.bio}</h3>
-                     {this.userData.location ? <h3><i class="fas fa-map-marker-alt"></i> {this.userData.location}</h3> : ""}
-                     <h3>Favorite language: {!this.state.favoriteLang ? <div class="progress">
-                        <div class="indeterminate"></div>
+                     {this.userData.location ? <h3><i className="fas fa-map-marker-alt"></i> {this.userData.location}</h3> : ""}
+                     <h3>Favorite language: {!this.state.favoriteLang ? <div className="progress">
+                        <div className="indeterminate"></div>
                      </div> :
                         <span className="lang-wrapper">
                            <span className="repo-language-color" style={{ backgroundColor: colors[this.state.favoriteLang].color }}></span>
@@ -207,35 +207,35 @@ class UserProfile extends React.Component {
 
                </div>
 
-               <div class="row tab-row" style={{ marginBottom: 0 }}>
-                  <div class="col s12">
-                     <ul class="tabs">
-                        <li class="tab col s3"><a class="active" href="#test1">User info</a></li>
-                        <li class="tab col s3"><a href="#test2">Repos ({this.userData.public_repos})</a></li>
-                        <li class="tab col s3"><a href="#test3">Stats</a></li>
-                        <li class="tab col s3"><a href="#test4">Organizations {!this.state.userOrgs ? "" : `(${this.state.userOrgs.length})`}</a></li>
+               <div className="row tab-row" style={{ marginBottom: 0 }}>
+                  <div className="col s12">
+                     <ul className="tabs">
+                        <li className="tab col s3"><a className="active" href="#tab1">User info</a></li>
+                        <li className="tab col s3"><a href="#tab2">Repos ({this.userData.public_repos})</a></li>
+                        <li className="tab col s3"><a href="#tab3">Stats</a></li>
+                        <li className="tab col s3"><a href="#tab4">Organizations {!this.state.userOrgs ? "" : `(${this.state.userOrgs.length})`}</a></li>
                      </ul>
                   </div>
-                  <div id="test1" class="col s12">
+                  <div id="tab1" className="col s12">
 
-                     <div class="row section card-content">
-                        <div class="col s6">
+                     <div className="row section card-content">
+                        <div className="col s6">
                            <h5 style={{ margin: "10px 0" }}>Followers</h5>
                            <div>Followers: {this.userData.followers}</div>
                            <div>Following: {this.userData.following}</div>
                         </div>
-                        <div class="col s6">
+                        <div className="col s6">
                            <h5 style={{ margin: "10px 0" }}>Used languages</h5>
 
                            {!this.state.languageList.length ?
-                              <div class="progress">
-                                 <div class="indeterminate"></div>
+                              <div className="progress">
+                                 <div className="indeterminate"></div>
                               </div>
                               :
                               <div>
-                                 {this.state.languageList.map(val => {
+                                 {this.state.languageList.map((val, i) => {
                                     return (
-                                       <span className="lang-wrapper">
+                                       <span className="lang-wrapper" key={i}>
                                           <span className="repo-language-color" style={{ backgroundColor: colors[val].color }}></span>
                                           <span>{val}</span>
                                        </span>
@@ -246,23 +246,23 @@ class UserProfile extends React.Component {
                         </div>
                      </div>
 
-                     <div class="divider"></div>
+                     <div className="divider"></div>
 
                      <div className="row section card-content">
-                        <div class="col s6">
+                        <div className="col s6">
                            <h5 style={{ margin: "10px 0" }}>Joined</h5>
-                           <div><i class="fas fa-plus-circle"></i> Created: {this.userData.created_at.slice(0, -10)}</div>
-                           <div><i class="fas fa-sync-alt"></i> Last update: {this.userData.updated_at.slice(0, -10)}</div>
+                           <div><i className="fas fa-plus-circle"></i> Created: {this.userData.created_at.slice(0, -10)}</div>
+                           <div><i className="fas fa-sync-alt"></i> Last update: {this.userData.updated_at.slice(0, -10)}</div>
                         </div>
-                        <div class="col s6">
+                        <div className="col s6">
                            <h5 style={{ margin: "10px 0" }}>User links</h5>
-                           <div><i class="fas fa-link"></i> {!this.userData.blog ? "user have no links" : <a href={this.userData.blog}>{this.userData.blog}</a>} </div>
+                           <div><i className="fas fa-link"></i> {!this.userData.blog ? "user have no links" : <a href={this.userData.blog}>{this.userData.blog}</a>} </div>
                         </div>
                      </div>
 
                   </div>
 
-                  <div id="test2" class="col s12 card-content">
+                  <div id="tab2" className="col s12 card-content">
 
                      <table id="repos-table">
                         <thead>
@@ -279,39 +279,39 @@ class UserProfile extends React.Component {
                         </tbody>
                      </table>
 
-                     <div id="table-loader" class="progress" style={{ margin: '15px 0' }}>
-                        <div class="indeterminate"></div>
+                     <div id="table-loader" className="progress" style={{ margin: '15px 0' }}>
+                        <div className="indeterminate"></div>
                      </div>
 
                   </div>
 
-                  <div id="test3" class="col s12 card-content">
+                  <div id="tab3" className="col s12 card-content">
                      {!this.state.languageList.length ?
-                        <div class="progress">
-                           <div class="indeterminate"></div>
+                        <div className="progress">
+                           <div className="indeterminate"></div>
                         </div>
                         :
-                        <div class="chart-container">
+                        <div className="chart-container">
                            <canvas id="reposCountChart"></canvas>
                         </div>
                      }
 
                   </div>
 
-                  <div id="test4" class="col s12 card-content">
-                     <div class="row" style={{ marginBottom: 0 }}>
+                  <div id="tab4" className="col s12 card-content">
+                     <div className="row" style={{ marginBottom: 0 }}>
 
                         {!this.state.userOrgs ?
-                           <div class="progress">
-                              <div class="indeterminate"></div>
+                           <div className="progress">
+                              <div className="indeterminate"></div>
                            </div>
                            :
                            (!this.state.userOrgs.length ?
                               <h5>Organizations list is empty</h5>
                               :
-                              this.state.userOrgs.map(val => {
-                                 return (<div class="col s12 m6 l4">
-                                    <div class="card-panel org-card">
+                              this.state.userOrgs.map((val, i) => {
+                                 return (<div className="col s12 m6 l4" key={i}>
+                                    <div className="card-panel org-card">
                                        <div className="org-avatar">
                                           <img src={val.avatar_url}></img>
                                        </div>

@@ -52,9 +52,6 @@ class Card extends React.Component {
       return (
          <div className="wrapper row">
 
-            
-
-
             <div className={!this.state.isOpen ? "col s12 m8 l6" : "col s12 m10 l8"}>
                <div className="card-wrapper card" id="anim">
 
