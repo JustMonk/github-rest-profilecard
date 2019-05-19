@@ -1,4 +1,8 @@
 let colors = {
+   "No one language used": {
+      "color": "#000000",
+      "url": "https://github.com/"
+  },
    "1C Enterprise": {
        "color": "#814CCC",
        "url": "https://github.com/trending?l=1C-Enterprise"
