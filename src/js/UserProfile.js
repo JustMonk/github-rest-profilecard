@@ -236,7 +236,7 @@ class UserProfile extends React.Component {
                                  {this.state.languageList.map((val, i) => {
                                     return (
                                        <span className="lang-wrapper" key={i}>
-                                          <span className="repo-language-color" style={{ backgroundColor: colors[val].color }}></span>
+                                          <span className="repo-language-color" style={{ backgroundColor: colors[val] ? colors[val].color : colors['empty'].color }}></span>
                                           <span>{val}</span>
                                        </span>
                                     )
@@ -256,7 +256,7 @@ class UserProfile extends React.Component {
                         </div>
                         <div className="col s6">
                            <h5 style={{ margin: "10px 0" }}>User links</h5>
-                           <div><i className="fas fa-link"></i> {!this.userData.blog ? "user have no links" : <a href={this.userData.blog}>{this.userData.blog}</a>} </div>
+                           <div><i className="fas fa-link"></i> {!this.userData.blog ? "user have no links" : <a href={this.userData.blog}>{this.userData.blog.split('//').slice(1).join('')}</a>} </div>
                         </div>
                      </div>
 
@@ -264,7 +264,7 @@ class UserProfile extends React.Component {
 
                   <div id="tab2" className="col s12 card-content">
 
-                     <table id="repos-table">
+                     <table id="repos-table" class="responsive-table">
                         <thead>
                            <tr>
                               <th>Created date</th>
@@ -316,6 +316,7 @@ class UserProfile extends React.Component {
                                           <img src={val.avatar_url}></img>
                                        </div>
                                        <a target="_blank" href={`https://github.com/${val.login}`}>{val.login}</a>
+                                       <div className="limiter"></div>
                                     </div>
                                  </div>)
                               })

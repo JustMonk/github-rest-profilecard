@@ -17,7 +17,6 @@ class Card extends React.Component {
 
    componentDidMount() {
       document.getElementById('anim').style.height = document.querySelector('.search-wrapper').offsetHeight + 'px';
-      
    }
 
    componentDidUpdate(prevProps, prevState, snapshot) {
