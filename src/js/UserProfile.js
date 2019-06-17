@@ -81,7 +81,7 @@ class UserProfile extends React.Component {
          datasets: [{
             label: header,
             backgroundColor: Object.keys(langList).map(val => {
-               return colors[val].color;
+               return colors[val] ? colors[val].color : colors['empty'].color;
             }),
             borderColor: "rgba(101, 101, 101, 0.4);",
             borderWidth: 2,
