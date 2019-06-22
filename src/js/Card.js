@@ -19,18 +19,7 @@ class Card extends React.Component {
       document.getElementById('anim').style.height = document.querySelector('.search-wrapper').offsetHeight + 'px';
    }
 
-   componentDidUpdate(prevProps, prevState, snapshot) {
-      //animate if content changed
-      /*let content = document.querySelector(!this.state.isOpen ? '.search-wrapper' : '#expand');
-      let wrap = document.getElementById('anim');
-
-      wrap.style.height = `${content.offsetHeight}px`;
-
-      console.log(content.offsetHeight);*/
-   }
-
    changeWrapperSize(height) {
-      //или все таки в состоянии размер хранить? думаю не надо
       let wrap = document.getElementById('anim');
       wrap.style.height = `${height}px`;
    }
